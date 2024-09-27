@@ -2,4 +2,11 @@
 1st home assignment
 */ 
 
+
+#ifndef H_FUNCTION
+#define H_FUNCTION
+
 void hello(std::string name);
+
+#endif
+
