@@ -1,7 +1,8 @@
-CXX = g++
-TARGET = hello
-SRCS = main.cpp function.cpp
+hello: main.cpp function.cpp
+	g++ -o hello main.cpp function.cpp
 
-$(TARGET): $(SRCS)
-	$(CXX) -o $(TARGET) $(SRCS)
+clean:
+	rm -f hello  *.o
+
+
 
