@@ -3,8 +3,8 @@
 */ 
 
 
-#ifndef H_FUNCTION
-#define H_FUNCTION
+#ifndef PROBLEM0_FUNCTION_H
+#define PROBLEM0_FUNCTION_H
 
 void hello(std::string name);
 
