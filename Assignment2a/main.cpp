@@ -9,18 +9,8 @@ int main() {
     std::fstream input_file;
     input_file.open(f_path, std::ios::binary | std::ios::in);
 
-    //cheking whether the file has been opened
-    if (input_file.is_open()) {
-        std::cout << "File opened succesfully" << std::endl;
-    }
-    else {
-        std::cout << "A problem occured while opening the file" << std::endl;
-    }
-
-
     //measuring file's size
     int f_size = std::filesystem::file_size(f_path);
-    std::cout << f_size << std::endl;
 
     //allocating dynamic memory for a list
     char* contents = new char[f_size];
