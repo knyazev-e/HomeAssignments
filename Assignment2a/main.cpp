@@ -1,3 +1,7 @@
+/* Kniazeva Eva Andreevna
+st128104@student.spbu.ru */
+
+
 #include <filesystem>
 #include <fstream>
 #include <iostream>
