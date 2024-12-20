@@ -46,7 +46,7 @@ int main() {
             index++;
         }
     }
-    std::cout << numbers[0] << std::endl;
 
-    delete[]
+    std::cout << numbers[0] << std::endl;
+    delete[] numbers;
 }
