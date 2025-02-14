@@ -9,7 +9,7 @@ st128104@student.spbu.ru */
 int main() {
 
     //opening the source file
-    std::filesystem::path f_path = "source.pdf";
+    std::filesystem::path f_path = "source.bin";
     std::fstream input_file;
     input_file.open(f_path, std::ios::binary | std::ios::in);
 
@@ -25,12 +25,12 @@ int main() {
 
     //flipping the array
     for (int i = 0; i < f_size/2; i++) {
-        std::swap(contents[1], contents[f_size - i - 1]);
+        std::swap(contents[i], contents[f_size - i - 1]);
     }
 
     //creating the output file
     std::fstream output_file;
-    output_file.open("result.pdf", std::ios::binary | std::ios::out);
+    output_file.open("result.bin", std::ios::binary | std::ios::out);
     output_file.write(contents, f_size);
     output_file.close();
 
@@ -39,3 +39,6 @@ int main() {
 
 
     }
+
+
+
