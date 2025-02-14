@@ -5,4 +5,4 @@ main.o: main.cpp
 	g++ -c main.cpp -o main.o
 
 clean:
-	rm -f result.pdf prog *.o
+	rm -f result.bin prog *.o
