@@ -4,33 +4,33 @@ st128104@student.spbu.ru */
 
 #include "Autobot.h"
 
-Autobot::Autobot(std::string name, Direction* direction, int power_level, std::string weapon, Item item)
-: Transformer(name, "Autobot", direction, item), _power_level(power_level), _weapon(weapon), _courage(100) {}
+Autobot::Autobot(std::string _name, int _hp, Effect _effect, Weapon* _weapon, int _speed, std::string _state):
+    Transformer(_name, _hp, _effect, _weapon), speed(_speed), state(_state), attention(true) {}
 
 Autobot::~Autobot() {}
 
-int Autobot::get_power_level() {
-    return _power_level;
+void Autobot::setSpeed(int _speed) {
+    speed = _speed;
 }
 
-void Autobot::set_power_level(int power_level) {
-    _power_level = power_level;
+int Autobot::getSpeed() {
+    return speed;
 }
 
-std::string Autobot::get_weapon() {
-    return _weapon;
+void Autobot::setState(std::string _state) {
+    state = _state;
 }
 
-void Autobot::set_weapon(std::string weapon) {
-    _weapon = weapon;
+std::string Autobot::getState() {
+    return state;
 }
 
-int Autobot::get_courage() {
-    return _courage;
+void Autobot::setAttention(bool _attention) {
+    attention = _attention;
 }
 
-void Autobot::set_courage(int courage) {
-    _courage = courage;
+bool Autobot::getAttention() {
+    return attention;
 }
 
-void Autobot::defend() {}
+void Autobot::dodge() {}

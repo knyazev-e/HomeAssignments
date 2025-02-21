@@ -7,26 +7,23 @@ st128104@student.spbu.ru */
 
 #include "Transformer.h"
 
+
 class Decepticon : public Transformer {
 public:
-    Decepticon(std::string name, Direction* direction, int power_level, std::string weapon, Item item);
+    Decepticon(std::string _name, int _hp, Effect _effect, Weapon* _weapon, int _stability);
     ~Decepticon();
 
-    int get_power_level();
-    void set_power_level(int power_level);
+    void setStability(int _stability);
+    int getStability();
 
-    std::string get_weapon();
-    void set_weapon(std::string weapon);
-
-    int get_loyalty();
-    void set_loyalty(int loyalty);
+    void setLuck(bool _luck);
+    bool getLuck();
 
     void attack();
 
 private:
-    int _power_level;
-    std::string _weapon;
-    int _loyalty;
+    bool luck;
+    int stability;
 };
 
 #endif

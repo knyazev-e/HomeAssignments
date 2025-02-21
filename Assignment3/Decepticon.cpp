@@ -4,33 +4,26 @@ st128104@student.spbu.ru */
 
 #include "Decepticon.h"
 
-Decepticon::Decepticon(std::string name, Direction* direction, int power_level, std::string weapon, Item item)
-    : Transformer(name, "Decepticon", direction, item), _power_level(power_level), _weapon(weapon), _loyalty(100) {}
+
+Decepticon::Decepticon(std::string _name, int _hp, Effect _effect, Weapon* _weapon, int _stability):
+    Transformer(_name, _hp, _effect, _weapon), stability(_stability), luck(false) {}
 
 Decepticon::~Decepticon() {}
 
-int Decepticon::get_power_level() {
-    return _power_level;
+void Decepticon::setStability(int _stability) {
+    stability = _stability;
 }
 
-void Decepticon::set_power_level(int power_level) {
-    _power_level = power_level;
+int Decepticon::getStability() {
+    return stability;
 }
 
-std::string Decepticon::get_weapon() {
-    return _weapon;
+void Decepticon::setLuck(bool _luck) {
+    luck = _luck;
 }
 
-void Decepticon::set_weapon(std::string weapon) {
-    _weapon = weapon;
-}
-
-int Decepticon::get_loyalty() {
-    return _loyalty;
-}
-
-void Decepticon::set_loyalty(int loyalty) {
-    _loyalty = loyalty;
+bool Decepticon::getLuck() {
+    return luck;
 }
 
 void Decepticon::attack() {}

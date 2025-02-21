@@ -4,53 +4,52 @@ st128104@student.spbu.ru */
 
 #include "Transformer.h"
 
-Transformer::Transformer(std::string name, std::string affiliation, Direction* direction, Item item)
-    : _name(name), _affiliation(affiliation), _fuel(100), _direction(direction), _item(item) {}
+
+Transformer::Transformer(std::string _name, int _hp, Effect _effect, Weapon* _weapon):
+    name(_name), health_points(_hp), power(100), effect(_effect), weapon(_weapon) {}
 
 Transformer::~Transformer() {}
 
-std::string Transformer::get_name() {
-    return _name;
+std::string Transformer::getName() {
+    return name;
 }
 
-void Transformer::set_name(std::string name) {
-    _name = name;
+void Transformer::setName(std::string _name) {
+    name = _name;
 }
 
-std::string Transformer::get_affiliation() {
-    return _affiliation;
+int Transformer::getHp() {
+    return health_points;
 }
 
-void Transformer::set_affiliation(std::string affiliation) {
-    _affiliation = affiliation;
+void Transformer::setHp(int _hp) {
+    health_points = _hp;
 }
 
-int Transformer::get_fuel() {
-    return _fuel;
+int Transformer::getPower() {
+    return power;
 }
 
-void Transformer::set_fuel(int fuel) {
-    _fuel = fuel;
+void Transformer::setPower(int _pwr) {
+    power = _pwr;
 }
 
-Direction* Transformer::get_direction() {
-    return _direction;
+Weapon* Transformer::getWeapon() {
+    return weapon;
 }
 
-void Transformer::set_direction(Direction* direction) {
-    _direction = direction;
+void Transformer::setWeapon(Weapon* _weapon) {
+    weapon = _weapon;
 }
 
-Item Transformer::get_item() {
-    return _item;
+Effect Transformer::getEffect() {
+    return effect;
 }
 
-void Transformer::set_item(Item item) {
-    _item = item;
+void Transformer::setEffect(Effect _effect) {
+    effect = _effect;
 }
 
+void Transformer::talk() {}
+void Transformer::walk() {}
 void Transformer::transform() {}
-
-void Transformer::move() {}
-
-void Transformer::get_status() {}

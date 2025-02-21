@@ -2,30 +2,33 @@
 st128104@student.spbu.ru */
 
 
-#include <iostream>
 #include "Autobot.h"
 #include "Decepticon.h"
-#include "Neutral.h"
-#include "Item.h"
-#include "Direction.h"
+#include "Worker.h"
+#include "Effect.h"
+#include "Weapon.h"
 
 int main() {
-    Direction north("North");
-    Direction south("South");
-    Direction east("East");
+    Weapon none("empty");
+    Weapon laser("optical");
+    Weapon gun("firearm");
 
-    Item energonCube("Energon Cube");
-    Item laserBlaster("Laser Blaster");
+    Effect PowerUp("Power Up");
+    Effect Agility("Agility");
+    Effect IncreasedStrength("Strength");
 
-    Autobot optimus("Optimus Prime", &north, 9000, "Ion Blaster", energonCube);    optimus.set_item(energonCube);
-    optimus.defend();
+    Autobot Bumblebee("Bumblebee", 1000, Agility, &none, 20, "Default");
+    Decepticon Megatron("Megatron", 1200, PowerUp, &gun, 10);
+    Worker Racolt("Racolt", 700, IncreasedStrength, &none, "Construction", 80);
 
-    Decepticon megatron("Megatron", &south, 9500, "Fusion Cannon", laserBlaster);
-    megatron.attack();
+    Bumblebee.setWeapon(&laser);
+    Megatron.setLuck(true);
+    Megatron.setStability(5);
 
-    Item ancientScrolls("Ancient Scrolls");
-    Neutral alphaTrion("Alpha Trion", &east, "Sage", ancientScrolls);
-    alphaTrion.negotiate();
+    Megatron.attack();
+    Bumblebee.transform();
+    Bumblebee.dodge();
+    Racolt.work();
 
     return 0;
 }

@@ -6,39 +6,40 @@ st128104@student.spbu.ru */
 #define TRANSFORMER_H
 
 #include <string>
-#include "Item.h"
-#include "Direction.h"
+#include "Effect.h"
+#include "Weapon.h"
+
 
 class Transformer {
 public:
-    Transformer(std::string name, std::string affiliation, Direction* direction, Item item);
+    Transformer(std::string _name, int _hp, Effect _effect, Weapon* _weapon);
     ~Transformer();
 
-    std::string get_name();
-    void set_name(std::string name);
+    std::string getName();
+    void setName(std::string _name);
 
-    std::string get_affiliation();
-    void set_affiliation(std::string affiliation);
+    int getHp();
+    void setHp(int _hp);
 
-    int get_fuel();
-    void set_fuel(int fuel);
+    int getPower();
+    void setPower(int _pwr);
 
-    Direction* get_direction();
-    void set_direction(Direction* direction);
+    Weapon* getWeapon();
+    void setWeapon(Weapon* _weapon);
 
-    Item get_item();
-    void set_item(Item item);
+    Effect getEffect();
+    void setEffect(Effect _effect);
 
+    void talk();
+    void walk();
     void transform();
-    void move();
-    void get_status();
 
 protected:
-    std::string _name;
-    std::string _affiliation;
-    int _fuel;
-    Direction* _direction;
-    Item _item;
+    std::string name;
+    int health_points;
+    int power;
+    Effect effect;
+    Weapon* weapon;
 };
 
 #endif

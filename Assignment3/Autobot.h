@@ -9,24 +9,24 @@ st128104@student.spbu.ru */
 
 class Autobot : public Transformer {
 public:
-    Autobot(std::string name, Direction* direction, int power_level, std::string weapon, Item item);
+    Autobot(std::string _name, int _hp, Effect _effect, Weapon* _weapon, int _speed, std::string _state);
     ~Autobot();
 
-    int get_power_level();
-    void set_power_level(int power_level);
+    void setSpeed(int _speed);
+    int getSpeed();
 
-    std::string get_weapon();
-    void set_weapon(std::string weapon);
+    void setState(std::string _state);
+    std::string getState();
 
-    int get_courage();
-    void set_courage(int courage);
+    void setAttention(bool _attention);
+    bool getAttention();
 
-    void defend();
+    void dodge();
 
 private:
-    int _power_level;
-    std::string _weapon;
-    int _courage;
+    std::string state;
+    int speed;
+    bool attention;
 };
 
 #endif
