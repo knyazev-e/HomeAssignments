@@ -18,3 +18,6 @@ make
 ## Test
 ./tests
 
+## Clean
+make cleanall
+
