@@ -52,4 +52,4 @@ void Transformer::setEffect(Effect _effect) {
 
 void Transformer::talk() {}
 void Transformer::walk() {}
-void Transformer::transform() {}
+void Transformer::think() {}

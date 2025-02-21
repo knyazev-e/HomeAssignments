@@ -32,7 +32,7 @@ public:
 
     void talk();
     void walk();
-    void transform();
+    void think();
 
 protected:
     std::string name;

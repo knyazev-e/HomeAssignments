@@ -5,7 +5,7 @@ st128104@student.spbu.ru */
 #include "Autobot.h"
 
 Autobot::Autobot(std::string _name, int _hp, Effect _effect, Weapon* _weapon, int _speed, std::string _state):
-    Transformer(_name, _hp, _effect, _weapon), speed(_speed), state(_state), attention(true) {}
+    Transformer(_name, _hp, _effect, _weapon), speed(_speed), state(_state), attention(false) {}
 
 Autobot::~Autobot() {}
 

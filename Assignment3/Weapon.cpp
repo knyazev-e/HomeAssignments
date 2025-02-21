@@ -8,10 +8,10 @@ Weapon::Weapon(std::string type): weapon_type(type) {}
 
 Weapon::~Weapon() {}
 
-std::string Weapon::getWeapon() {
+std::string Weapon::getWeaponType() {
     return weapon_type;
 }
 
-void Weapon::setWeapon(std::string type) {
+void Weapon::setWeaponType(std::string type) {
     weapon_type = type;
 }

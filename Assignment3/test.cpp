@@ -6,72 +6,106 @@ st128104@student.spbu.ru */
 #include "Transformer.h"
 #include "Autobot.h"
 #include "Decepticon.h"
-#include "Neutral.h"
-#include "Item.h"
-#include "Direction.h"
+#include "Worker.h"
+#include "Effect.h"
+#include "Weapon.h"
 
-TEST(TransformerTest, ConstructorInitialization) {
-    Direction north("North");
-    Item item("Energon Cube");
-    Transformer transformer("Bumblebee", "Autobot", &north, item);
 
-    EXPECT_EQ(transformer.get_name(), "Bumblebee");
-    EXPECT_EQ(transformer.get_affiliation(), "Autobot");
-    EXPECT_EQ(transformer.get_direction()->get_direction_name(), "North");
-    EXPECT_EQ(transformer.get_item().get_item_name(), "Energon Cube");
+TEST(TransformerTest, BumblebeeTest) {
+    Weapon laser("optical");
+    Weapon none("empty");
+    Effect agility("Agility");
+    Effect speedup("SpeedUp");
+    Transformer Bumblebee(" ", 1, agility, &none);
+
+    bumblebee.setName("Bumblebee");
+    bumblebee.setHp(1000);
+    bumblebee.setEffect(speedup);
+    bumblebee.setWeapon(&laser);
+    bumblebee.setPower(50);
+
+    EXPECT_EQ(bumblebee.getName(), "Bumblebee");
+    EXPECT_EQ(bumblebee.getHp(), 1000);
+    EXPECT_EQ(bumblebee.getEffect().getName(), "SpeedUp");
+    EXPECT_EQ(bumblebee.getWeapon->getWeaponType(), "optical");
+    EXPECT_EQ(bumblebee.getPower, 50);
 }
 
-TEST(AutobotTest, ConstructorAndDefense) {
-    Direction north("North");
-    Item item("Energon Shield");
-    Autobot autobot("Optimus Prime", &north, 9000, "Ion Blaster", item);
+TEST(DecepticonTest, MegatronTest) {
+    Weapon laser("optical");
+    Weapon none("empty");
+    Effect agility("Agility");
+    Effect speedup("SpeedUp");
+    Decepticon megatron(" ", 1, agility, &none, 10);
 
-    EXPECT_EQ(autobot.get_power_level(), 9000);
-    EXPECT_EQ(autobot.get_item().get_item_name(), "Energon Shield");
-    autobot.defend();
-    EXPECT_EQ(autobot.get_weapon(), "Ion Blaster");
+    megatron.setName("Megatron");
+    megatron.setHp(1000);
+    megatron.setEffect(speedup);
+    megatron.setWeapon(&laser);
+    megatron.setPower(80);
+    megatron.setStability(11);
+    megatron.setLuck(true);
+
+    EXPECT_EQ(megatron.getName(), "Megatron");
+    EXPECT_EQ(megatron.getHp(), 1000);
+    EXPECT_EQ(megatron.getEffect().getName(), "SpeedUp");
+    EXPECT_EQ(megatron.getWeapon->getWeaponType(), "optical");
+    EXPECT_EQ(megatron.getPower, 80);
+    EXPECT_EQ(megatron.getStability, 11);
+    EXPECT_EQ(megatron.getLuck, true);
 }
 
-TEST(DecepticonTest, ConstructorAndAttack) {
-    Direction south("South");
-    Item item("Dark Saber");
-    Decepticon decepticon("Megatron", &south, 9500, "Fusion Cannon", item);
+TEST(AutobotTest, OptimusTest) {
+    Weapon laser("optical");
+    Weapon gun("firearm");
+    Effect agility("Agility");
+    Effect speedup("SpeedUp");
+    Autobot optimus(" ", 1, agility, &laser, 110, "default");
 
-    EXPECT_EQ(decepticon.get_power_level(), 9500);
-    EXPECT_EQ(decepticon.get_item().get_item_name(), "Dark Saber");
-    decepticon.attack();
-    EXPECT_EQ(decepticon.get_weapon(), "Fusion Cannon");
+    optimus.setName("OptimusPrime");
+    optimus.setHp(1000);
+    optimus.setEffect(speedup);
+    optimus.setWeapon(&gun);
+    optimus.setPower(100);
+    optimus.setSpeed(130);
+    optimus.setState("active");
+    optimus.setAttention(true);
+
+    EXPECT_EQ(optimus.getName(), "OptimusPrime");
+    EXPECT_EQ(optimus.getHp(), 1000);
+    EXPECT_EQ(optimus.getEffect().getName(), "SpeedUp");
+    EXPECT_EQ(optimus.getWeapon->getWeaponType(), "firearm");
+    EXPECT_EQ(optimus.getPower, 100);
+    EXPECT_EQ(optimus.getSpeed, 130);
+    EXPECT_EQ(optimus.getState, "active");
+    EXPECT_EQ(optimus.getAttention, true);
 }
 
-TEST(NeutralTest, ConstructorAndNegotiation) {
-    Direction east("East");
-    Item item("Ancient Scrolls");
-    Neutral neutral("Alpha Trion", &east, "Sage", item);
+TEST(WorkerTest, RobotTest) {
+    Weapon laser("optical");
+    Weapon none("empty");
+    Effect agility("Agility");
+    Effect speedup("SpeedUp");
+    Worker robot(" ", 1, agility, &laser, "Construction", 100);
 
-    EXPECT_EQ(neutral.get_occupation(), "Sage");
-    EXPECT_EQ(neutral.get_item().get_item_name(), "Ancient Scrolls");
-    neutral.negotiate();
-}
+    robot.setName("Robot");
+    robot.setHp(1000);
+    robot.setEffect(speedup);
+    robot.setWeapon(&none);
+    robot.setPower(50);
+    robot.setJob("Engineering");
+    robot.setEfficiency(70);
 
-TEST(DirectionTest, DirectionName) {
-    Direction direction("West");
-
-    EXPECT_EQ(direction.get_direction_name(), "West");
-
-    direction.set_direction_name("East");
-    EXPECT_EQ(direction.get_direction_name(), "East");
-}
-
-TEST(ItemTest, ItemName) {
-    Item item("Energon Cube");
-
-    EXPECT_EQ(item.get_item_name(), "Energon Cube");
-
-    item.set_item_name("Laser Blaster");
-    EXPECT_EQ(item.get_item_name(), "Laser Blaster");
+    EXPECT_EQ(robot.getName(), "Robot");
+    EXPECT_EQ(robot.getHp(), 1000);
+    EXPECT_EQ(robot.getEffect().getName(), "SpeedUp");
+    EXPECT_EQ(robot.getWeapon->getWeaponType(), "empty");
+    EXPECT_EQ(robot.getPower, 50);
+    EXPECT_EQ(robot.getJob, "Engineering");
+    EXPECT_EQ(robot.getEfficiency, 70);
 }
 
 int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
+    testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
