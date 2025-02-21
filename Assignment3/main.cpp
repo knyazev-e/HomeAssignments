@@ -26,13 +26,16 @@ int main() {
     Megatron.setStability(5);
 
     Megatron.attack();
-    Bumblebee.think();
+    std::cout << "Megatron attacks" << std::endl;
 
-    std::cout << "Bumblebee thinks about sinking" << std::endl;
+    Bumblebee.think();
+    std::cout << "Bumblebee is thinking" << std::endl;
 
     Bumblebee.dodge();
-    Racolt.work();
+    std::cout << "Bumblebee dodged Megatron's attack" << std::endl;
 
-    std::cout << "The program finished its execution" << std::endl;
+    Racolt.work();
+    std::cout << "Racolt is working" << std::endl;
+
     return 0;
 }

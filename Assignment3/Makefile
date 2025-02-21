@@ -10,9 +10,9 @@ CXXFLAGS = -I. -std=c++14 -Wall -pthread -g -fPIC
 LXXFLAGS = $(CXXFLAGS) -L. -l:$(LIBPROJECT)
 LGTESTFLAGS = $(LXXFLAGS) -lgtest -lgtest_main -lpthread
 
-MAIN_SOURCES = main.cpp Autobot.cpp Decepticon.cpp Neutral.cpp Item.cpp Direction.cpp Transformer.cpp
+MAIN_SOURCES = main.cpp Autobot.cpp Decepticon.cpp Worker.cpp Effect.cpp Weapon.cpp Transformer.cpp
 MAIN_OBJECTS = $(MAIN_SOURCES:.cpp=.o)
-TEST_SOURCES = test.cpp Autobot.cpp Decepticon.cpp Neutral.cpp Item.cpp Direction.cpp Transformer.cpp
+TEST_SOURCES = test.cpp Autobot.cpp Decepticon.cpp Worker.cpp Effect.cpp Weapon.cpp Transformer.cpp
 TEST_OBJECTS = $(TEST_SOURCES:.cpp=.o)
 HEADERS = $(wildcard *.h)
 
