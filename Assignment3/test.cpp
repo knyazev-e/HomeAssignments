@@ -16,7 +16,7 @@ TEST(TransformerTest, BumblebeeTest) {
     Weapon none("empty");
     Effect agility("Agility");
     Effect speedup("SpeedUp");
-    Transformer Bumblebee(" ", 1, agility, &none);
+    Transformer bumblebee(" ", 1, agility, &none);
 
     bumblebee.setName("Bumblebee");
     bumblebee.setHp(1000);
@@ -27,8 +27,8 @@ TEST(TransformerTest, BumblebeeTest) {
     EXPECT_EQ(bumblebee.getName(), "Bumblebee");
     EXPECT_EQ(bumblebee.getHp(), 1000);
     EXPECT_EQ(bumblebee.getEffect().getName(), "SpeedUp");
-    EXPECT_EQ(bumblebee.getWeapon->getWeaponType(), "optical");
-    EXPECT_EQ(bumblebee.getPower, 50);
+    EXPECT_EQ(bumblebee.getWeapon()->getWeaponType(), "optical");
+    EXPECT_EQ(bumblebee.getPower(), 50);
 }
 
 TEST(DecepticonTest, MegatronTest) {
@@ -49,10 +49,10 @@ TEST(DecepticonTest, MegatronTest) {
     EXPECT_EQ(megatron.getName(), "Megatron");
     EXPECT_EQ(megatron.getHp(), 1000);
     EXPECT_EQ(megatron.getEffect().getName(), "SpeedUp");
-    EXPECT_EQ(megatron.getWeapon->getWeaponType(), "optical");
-    EXPECT_EQ(megatron.getPower, 80);
-    EXPECT_EQ(megatron.getStability, 11);
-    EXPECT_EQ(megatron.getLuck, true);
+    EXPECT_EQ(megatron.getWeapon()->getWeaponType(), "optical");
+    EXPECT_EQ(megatron.getPower(), 80);
+    EXPECT_EQ(megatron.getStability(), 11);
+    EXPECT_EQ(megatron.getLuck(), true);
 }
 
 TEST(AutobotTest, OptimusTest) {
@@ -74,11 +74,11 @@ TEST(AutobotTest, OptimusTest) {
     EXPECT_EQ(optimus.getName(), "OptimusPrime");
     EXPECT_EQ(optimus.getHp(), 1000);
     EXPECT_EQ(optimus.getEffect().getName(), "SpeedUp");
-    EXPECT_EQ(optimus.getWeapon->getWeaponType(), "firearm");
-    EXPECT_EQ(optimus.getPower, 100);
-    EXPECT_EQ(optimus.getSpeed, 130);
-    EXPECT_EQ(optimus.getState, "active");
-    EXPECT_EQ(optimus.getAttention, true);
+    EXPECT_EQ(optimus.getWeapon()->getWeaponType(), "firearm");
+    EXPECT_EQ(optimus.getPower(), 100);
+    EXPECT_EQ(optimus.getSpeed(), 130);
+    EXPECT_EQ(optimus.getState(), "active");
+    EXPECT_EQ(optimus.getAttention(), true);
 }
 
 TEST(WorkerTest, RobotTest) {
@@ -99,10 +99,10 @@ TEST(WorkerTest, RobotTest) {
     EXPECT_EQ(robot.getName(), "Robot");
     EXPECT_EQ(robot.getHp(), 1000);
     EXPECT_EQ(robot.getEffect().getName(), "SpeedUp");
-    EXPECT_EQ(robot.getWeapon->getWeaponType(), "empty");
-    EXPECT_EQ(robot.getPower, 50);
-    EXPECT_EQ(robot.getJob, "Engineering");
-    EXPECT_EQ(robot.getEfficiency, 70);
+    EXPECT_EQ(robot.getWeapon()->getWeaponType(), "empty");
+    EXPECT_EQ(robot.getPower(), 50);
+    EXPECT_EQ(robot.getJob(), "Engineering");
+    EXPECT_EQ(robot.getEfficiency(), 70);
 }
 
 int main(int argc, char **argv) {

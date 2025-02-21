@@ -1,7 +1,7 @@
 /* Kniazeva Eva Andreevna
 st128104@student.spbu.ru */
 
-
+#include <iostream>
 #include "Autobot.h"
 #include "Decepticon.h"
 #include "Worker.h"
@@ -26,9 +26,13 @@ int main() {
     Megatron.setStability(5);
 
     Megatron.attack();
-    Bumblebee.transform();
+    Bumblebee.think();
+
+    std::cout << "Bumblebee thinks about sinking" << std::endl;
+
     Bumblebee.dodge();
     Racolt.work();
 
+    std::cout << "The program finished its execution" << std::endl;
     return 0;
 }
