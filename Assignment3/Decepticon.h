@@ -22,8 +22,8 @@ public:
     void attack();
 
 private:
-    bool luck;
     int stability;
+    bool luck;
 };
 
 #endif

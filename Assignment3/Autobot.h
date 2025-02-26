@@ -24,8 +24,8 @@ public:
     void dodge();
 
 private:
-    std::string state;
     int speed;
+    std::string state;
     bool attention;
 };
 
