@@ -37,15 +37,17 @@ int main() {
     Racolt.work();
     std::cout << "Racolt is working" << std::endl;
 
-    if (Bumblebee == Megatron):
-            std::cout << "Bumblebee and Megatron have equal powers" << std::endl;
+    if (Bumblebee == Megatron) {
+        std::cout << "Bumblebee and Megatron have equal powers" << std::endl;
+    }
 
-    Bumlebee.setPower(150);
+    Bumblebee.setPower(150);
 
-    if (Bumblebee > Megatron):
-            std::cout << "Bumblebee is now stronger thab Megatron" <<std::endl;
+    if (Bumblebee > Megatron) {
+        std::cout << "Bumblebee is now stronger than Megatron" <<std::endl;
+    }
 
-    Worker RandomWorker();
+    Worker RandomWorker;
     std::cout << RandomWorker << std::endl;
 
     return 0;
