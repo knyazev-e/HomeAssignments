@@ -5,7 +5,7 @@ TESTPROJECT = tests
 CXX = g++
 A = ar
 AFLAGS = rsv
-CXXFLAGS = -I. -std=c++14 -Wall -pthread -g -fPIC
+CXXFLAGS = -I. -std=c++14 -Wall -Werror -Wpedantic -pthread -g -fPIC
 LXXFLAGS = $(CXXFLAGS) -L. -l:$(LIBPROJECT)
 LGTESTFLAGS = $(LXXFLAGS) -lgtest -lgtest_main -lpthread
 

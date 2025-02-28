@@ -105,6 +105,34 @@ TEST(WorkerTest, RobotTest) {
     EXPECT_EQ(robot.getEfficiency(), 70);
 }
 
+TEST(OverloadTest, OperatorsTest) {
+    Worker RandomWorker;
+    Autobot TestAutobot;
+
+    EXPECT_EQ(RandomWorker.getName(), "Unnamed");
+    EXPECT_EQ(RandomWorker.getHp(), 1000);
+    EXPECT_EQ(RandomWorker.getEffect().getName(), "NoEffect");
+    EXPECT_EQ(RandomWorker.getWeapon(), nullptr);
+    EXPECT_EQ(RandomWorker.getPower(), 100);
+    EXPECT_EQ(RandomWorker.getJob(), "Unspecified");
+    EXPECT_EQ(RandomWorker.getEfficiency(), 10);
+
+    EXPECT_EQ(TestAutobot.getName(), "Unnamed");
+    EXPECT_EQ(TestAutobot.getHp(), 1000);
+    EXPECT_EQ(TestAutobot.getEffect().getName(), "NoEffect");
+    EXPECT_EQ(TestAutobot.getWeapon(), nullptr);
+    EXPECT_EQ(TestAutobot.getPower(), 100);
+    EXPECT_EQ(TestAutobot.getSpeed(), 10);
+    EXPECT_EQ(TestAutobot.getState(), "Default");
+    EXPECT_EQ(TestAutobot.getAttention(), false);
+
+    EXPECT_EQ(RandomWorker == TestAutobot, true);
+    RandomWorker.setPower(110);
+    EXPECT_EQ(RandomWorker > TestAutobot, true);
+    TestAutobot.setPower(160);
+    EXPECT_EQ(RandomWorker < TestAutobot, true);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
