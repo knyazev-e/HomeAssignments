@@ -43,6 +43,10 @@ public:
     bool operator>(const Transformer& other) const;
     bool operator==(const Transformer& other) const;
 
+    virtual void fight();
+    virtual void transform();
+    virtual void upgrade();
+
 protected:
     std::string name;
     int health_points;

@@ -23,6 +23,10 @@ public:
 
     void attack();
 
+    void fight() override;
+    void transform() override;
+    void upgrade() override;
+
 private:
     int stability;
     bool luck;

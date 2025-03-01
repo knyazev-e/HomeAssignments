@@ -30,3 +30,15 @@ bool Decepticon::getLuck() {
 }
 
 void Decepticon::attack() {}
+
+void Decepticon::fight() {
+    std::cout << "This is the 'fight()' method of the Decepticon() class." << std::endl;
+}
+
+void Decepticon::transform() {
+    std::cout << "This is the 'transform()' method of the Decepticon() class." << std::endl;
+}
+
+void Decepticon::upgrade() {
+    std::cout << "This is the 'upgrade()' method of the Decepticon() class." << std::endl;
+}

@@ -73,3 +73,14 @@ bool Transformer::operator>(const Transformer& other) const {
     return this->getPower() > other.getPower();
 }
 
+void Transformer::fight() {
+    std::cout << "This is the 'fight()' method of the Transformer() class." << std::endl;
+}
+
+void Transformer::transform() {
+    std::cout << "This is the 'transform()' method of the Transformer() class." << std::endl;
+}
+
+void Transformer::upgrade() {
+    std::cout << "This is the 'upgrade()' method of the Transformer() class." << std::endl;
+}

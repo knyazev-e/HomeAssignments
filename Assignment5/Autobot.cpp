@@ -37,3 +37,15 @@ bool Autobot::getAttention() {
 }
 
 void Autobot::dodge() {}
+
+void Autobot::fight() {
+    std::cout << "This is the 'fight()' method of the Autobot() class." << std::endl;
+}
+
+void Autobot::transform() {
+    std::cout << "This is the 'transform()' method of the Autobot() class." << std::endl;
+}
+
+void Autobot::upgrade() {
+    std::cout << "This is the 'upgrade()' method of the Autobot() class." << std::endl;
+}

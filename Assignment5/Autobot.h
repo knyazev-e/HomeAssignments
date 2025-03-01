@@ -25,6 +25,10 @@ public:
 
     void dodge();
 
+    void fight() override;
+    void transform() override;
+    void upgrade() override;
+
 private:
     int speed;
     std::string state;
