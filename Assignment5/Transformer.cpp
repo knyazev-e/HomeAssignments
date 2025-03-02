@@ -73,6 +73,10 @@ bool Transformer::operator>(const Transformer& other) const {
     return this->getPower() > other.getPower();
 }
 
+bool Transformer::operator==(const Transformer& other)const {
+    return this->getPower() == other.getPower();
+}
+
 void Transformer::fight() {
     std::cout << "This is the 'fight()' method of the Transformer() class." << std::endl;
 }

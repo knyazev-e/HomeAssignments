@@ -16,7 +16,7 @@ public:
     Transformer(std::string _name, int _hp, Effect _effect, Weapon* _weapon);
     Transformer();
 
-    ~Transformer();
+    virtual ~Transformer();
 
     std::string getName() const;
     void setName(std::string _name);
